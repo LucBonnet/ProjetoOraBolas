@@ -1,24 +1,10 @@
-const slide = document.getElementById("slideBar")
-
 const canvas = document.getElementById("canvas")
 const ctx = canvas.getContext("2d");
 
-async function fileContent(path) {
-  let file = await fetch(path);
-  file = await file.text();
-
-  let content = file.replace(/(\r)/gm, "").trim().split("\n");
-  content.shift();
-  content = content.map(line => line.split("\t"));
-  
-  return content;
-}
-
 const imgBola = new Image();
-imgBola.src = './bola.png';
+imgBola.src = '../img/bola.png';
 desenhaCampo();
 imgBola.onload = main();
-
 
 function desenhaBola(x, y) {
   // 50 mm
@@ -62,14 +48,7 @@ function resetCanvas() {
 }
 
 async function main(){
-  const content = await fileContent('./trajetoria.dat')
- 
-  let t = content.map(line => line[0]);
-  let x = content.map(line => line[1]);
-  let y = content.map(line => line[2]);
-
-  slide.min = 0;
-  slide.max = t.length;
+  const {t, x, y} = await fileContent('../data/trajetoria.dat');
 
   desenhaTrajetoria(x, y, t);
 }
