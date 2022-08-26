@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Projeto Oras-Bolas </title>
+	<link rel="stylesheet" href="styles/estilo.css" type="text/css">
+</head>
+<body>
+	<div id="header">
+		<div class="wrapper clearfix">
+			<div id="logo">
+				<a href="inicio.html"><img src="img/eng.png" alt="LOGO" width="40" height="40"></a>
+			</div>
+			<ul id="navigation">
+				<li class="selected">
+					<a href="inicio.html">Projeto</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div id="contents">
+		<div id="adbox">
+			<div class="wrapper clearfix">
+				<div class="info">
+					<h1>Projeto Oras-Bolas</h1>
+					<p>
+						O Projeto tem como objetivo simular a interceptação da bola por um robo através de programação.
+					</p>
+				</div>
+			</div>
+			<div class="highlight">
+				<h2 id="campoTitle" > CAMPO
+			</div>
+		</div>
+		<div class="body clearfix">
+			<div class="pos-inputs">
+				<input type="text" placeholder="Posição x do robô" id="xRobo">
+				<input type="text" placeholder="Posição y do robô" id="yRobo">
+				<button type="button" id="btnSubmit">Enviar</button>
+			</div>
+			<div id="campo">
+				<canvas id="canvas" width="4500" height="3000"></canvas>
+				<div class="infos">
+					<p id="pInst"></p>
+					<p id="pPosBola"></p>
+					<p id="pPosRobo"></p>
+					<p id="pVelRobo"></p>
+					<p id="pDist"></p>
+				</div>
+			</div>
+			<p id="pDist">
+				
+			</p>
+		</div>
+	</div>
+	<div id="footer">
+		<div class="graficos">
+			<div class="grafico" id="gTraj"></div>
+			<div class="grafico" id="gDist"></div>
+			<div class="grafico" id="gXxT"></div>
+			<div class="grafico" id="gYxT"></div>
+			<div class="grafico" id="gVxxT"></div>
+			<div class="grafico" id="gVyxT"></div>
+			<div class="grafico" id="gAxxT"></div>
+			<div class="grafico" id="gAyxT"></div>
+		</div>
+	</div>
+	<!--Biblioteca do google charts-->
+	<script
+		type="text/javascript"
+		src="https://www.gstatic.com/charts/loader.js"
+	></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/regression/2.0.1/regression.js"></script>
+	<script type="text/javascript" src="./scripts/carregaDados.js"></script>
+	<script type="text/javascript" src="./scripts/config.js"></script>
+	<script type="text/javascript" src="./scripts/derivada.js"></script>
+	<script type="text/javascript" src="./scripts/gTraj.js"></script>
+	<script type="text/javascript" src="./scripts/gXeYxT.js"></script>
+	<script type="text/javascript" src="./scripts/gVxeVyporT.js"></script>
+	<script type="text/javascript" src="./scripts/gAxeAyporT.js"></script>
+	<script type="text/javascript" src="./scripts/gDxT.js"></script>
+	<script type="text/javascript" src="./scripts/carregaConfig.js"></script>
+  <script type="text/javascript" src="./scripts/canvasStyle.js"></script>
+  <script type="text/javascript" src="./scripts/canvas.js"></script>
+	</body>
+</html>
